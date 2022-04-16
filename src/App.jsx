@@ -6,16 +6,25 @@ import { useEffect, useState } from 'react';
 function App() {
   // let todo = ['asdf', 'dfg', 'zxvbxcv', 'zxcvzxcv'];
 
-  let [todos, setTodos] = useState(['asdf', 'dfg', 'zxvbxcv', 'zxcvzxcv'])
+  let [todos, setTodos] = useState(['asdf', 'dfg', 'zxvbxcv', 'zxcvzxcv']);
+  let [newTodo, setnewTodo] = useState('');
 
   const delteHandler = (e) => {
     const newTodos = [...todos];
     newTodos.splice(e, 1);
     setTodos(newTodos);
   }
-    useEffect(()=>{
 
-  },[todos])
+  const addNewTodo = (e) => {
+    if (newTodo) {
+      setTodos([newTodo, ...todos])
+      setnewTodo('')
+
+    }
+  }
+  useEffect(() => {
+
+  }, [todos, newTodo])
 
   return (
     <>
@@ -27,8 +36,8 @@ function App() {
           </div>
           <div className="body">
             <div className="input">
-              <input type="text" />
-              <button>Add</button>
+              <input type="text" value={newTodo} onChange={(e) => setnewTodo(e.target.value)} />
+              <button onClick={(e) => addNewTodo(e)}>Add</button>
             </div>
             {todos.map((e, i) =>
               <div className='data' key={i}>

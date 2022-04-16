@@ -37,6 +37,33 @@
   flex-direction: column;
   align-items: center;
 }
+.input{
+  width: 80%;
+  border: 3px solid white;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input > input{
+  flex: 4;
+  font-size: large;
+  border: 1px solid white;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.input > button{
+  flex: 1;
+  background-color: brown;
+  color: white;
+  margin-left: 5px;
+  font-size: large;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
 .data{
   border: 3px solid white;
   border-top-left-radius: 15px;
